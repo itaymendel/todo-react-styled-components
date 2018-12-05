@@ -1,4 +1,4 @@
-.property_bar__component {
+.component {
   position: absolute;
   right: 1em;
   top: 0;
@@ -9,13 +9,13 @@
   height: 100%;
 }
 
-.property_bar__button {
+.button {
   margin-right: 0.5em;
   opacity: 0.1;
   transition: opacity 0.25s ease-in-out;
 }
 
-.property_bar__button:hover {
+.button:hover {
   opacity: 1;
   transition: opacity 0.25s ease-in-out;
 }

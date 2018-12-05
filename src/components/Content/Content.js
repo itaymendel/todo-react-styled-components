@@ -6,7 +6,7 @@ import Form from '../Form/Form';
 import FormEdit from '../FormEdit/FormEdit';
 import FormItem from '../FormItem/FormItem';
 
-import './Content.css';
+import styles from './Content.module.css';
 
 class Content extends Component {
   static propTypes = {
@@ -60,7 +60,7 @@ class Content extends Component {
           {this.props.items.length ? (
             <div className="row justify-content-center">
               <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div className="content__todos">
+                <div className={styles.todos}>
                   <ul className="list-group content__todos__ul">
                     <DragDropContext onDragEnd={this.onDragEnd}>
                       <Droppable droppableId="droppable">
@@ -73,7 +73,7 @@ class Content extends Component {
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
-                                    className="content__todos__li">
+                                    className={styles.todos__li}>
                                     {this.props.editingItem.id === item.id ? (
                                       <FormEdit
                                         item={this.props.editingItem}

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
-import './FormItem.css';
+import styles from './FormItem.module.css';
 
 import PropertyBar from '../PropertyBar/PropertyBar';
 import Checkout from '../Checkout/Checkout';
@@ -29,14 +30,14 @@ export default class FormItem extends Component {
   render() {
     return (
       <li
-        className="form_item__component list-group-item form-control"
+        className={classnames(styles.component, "list-group-item form-control")}
         onMouseMove={() => this.setDisplayMenu(true)}
         onMouseLeave={() => this.setDisplayMenu(false)}>
         <div className="text-truncate" onClick={() => this.props.handleItemCompletion(this.props.item)}>
-          <div className="form_item__checkout d-inline-block">
+          <div className={classnames(styles.checkout, "d-inline-block")}>
             <Checkout isCompleted={this.props.item.completed} />
           </div>
-          <span className="form_item__text">{this.props.item.value}</span>
+          <span className={styles.text}>{this.props.item.value}</span>
         </div>
 
         {this.state.displayMenu ? (

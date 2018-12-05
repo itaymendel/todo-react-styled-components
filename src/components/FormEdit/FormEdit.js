@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
+import classnames from 'classnames';
 
-import './FormEdit.css';
+import styles from './FormEdit.module.css';
 
 export default class FormEdit extends Component {
   static propTypes = {
@@ -70,7 +71,7 @@ export default class FormEdit extends Component {
               <button
                 type="submit"
                 id="submit-edit-todo-item"
-                className="btn btn-primary form_edit__button--first"
+                className={classnames(styles.buttonFirst, "btn btn-primary")}
                 disabled={!this.state.itemValue}>
                 <FontAwesomeIcon icon={faCheck} />
               </button>

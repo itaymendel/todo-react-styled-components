@@ -1,4 +1,4 @@
-.footer__container {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,6 +7,8 @@
   background: var(--background-color);
 }
 
-.footer__p {
-  margin: 0;
+.span {
+  margin: 0 0.2em;
+  vertical-align: super;
+  font-size: 1.3em;
 }

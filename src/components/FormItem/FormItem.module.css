@@ -1,4 +1,4 @@
-.form_item__component {
+.component {
   width: 100%;
   height: 100%;
   position: relative;
@@ -6,15 +6,15 @@
   margin-bottom: 0.5em;
 }
 
-.form_item__component:hover {
+.component:hover {
   background: var(--background-color);
 }
 
-.form_item__checkout {
+.checkout {
   margin-right: 0.5em;
   height: 100%;
 }
 
-.form_item__text {
+.text {
   vertical-align: super;
 }
