@@ -9,8 +9,7 @@ const footerPropTypes = {
 
 const Footer = ({ className }) => (
   <div className={className}>
-    <div className={styles.container}>
-    </div>
+    <div className={styles.container} />
   </div>
 );
 

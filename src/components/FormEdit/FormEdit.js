@@ -71,11 +71,15 @@ export default class FormEdit extends Component {
               <button
                 type="submit"
                 id="submit-edit-todo-item"
-                className={classnames(styles.buttonFirst, "btn btn-primary")}
+                className={classnames(styles.buttonFirst, 'btn btn-primary')}
                 disabled={!this.state.itemValue}>
                 <FontAwesomeIcon icon={faCheck} />
               </button>
-              <button id="cancel-edit-todo-item" type="button" className="btn btn-danger" onClick={this.props.handleCancelEditItem}>
+              <button
+                id="cancel-edit-todo-item"
+                type="button"
+                className="btn btn-danger"
+                onClick={this.props.handleCancelEditItem}>
                 <FontAwesomeIcon icon={faTimes} />
               </button>
             </div>

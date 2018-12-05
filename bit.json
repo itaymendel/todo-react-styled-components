@@ -1,6 +1,6 @@
 {
-    "env": {},
-    "dependencies": {},
-    "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "npm"
+  "env": {},
+  "dependencies": {},
+  "componentsDefaultDirectory": "components/{name}",
+  "packageManager": "npm"
 }

@@ -14,7 +14,7 @@ const Header = ({ className }) => (
   <div className={className}>
     <div className={styles.container}>
       <nav className="navbar">
-        <span className={classnames(styles.span, "navbar-brand")}>
+        <span className={classnames(styles.span, 'navbar-brand')}>
           <FontAwesomeIcon className="d-inline-block" icon={faListAlt} size="lg" alt="List emoji" />
         </span>
         <span className={styles.span}>Bit Todo App</span>

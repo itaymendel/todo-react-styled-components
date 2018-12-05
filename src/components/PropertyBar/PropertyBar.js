@@ -15,11 +15,13 @@ const propertyBarPropTypes = {
 const PropertyBar = props => (
   <div className={styles.component}>
     <button
-      className={classnames(styles.button, "btn btn-secondary")} 
+      className={classnames(styles.button, 'btn btn-secondary')}
       onClick={() => props.handleSelectEditItem(props.id)}>
       <FontAwesomeIcon icon={faEdit} size="sm" />
     </button>
-    <button className={classnames(styles.button, "btn btn-danger")}  onClick={() => props.handleDeleteItem(props.id)}>
+    <button
+      className={classnames(styles.button, 'btn btn-danger')}
+      onClick={() => props.handleDeleteItem(props.id)}>
       <FontAwesomeIcon icon={faTrash} size="sm" />
     </button>
   </div>
