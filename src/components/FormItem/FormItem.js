@@ -41,11 +41,11 @@ export default class FormItem extends Component {
   render() {
     return (
       <FormItemStyle
-        className='list-group-item form-control'
+        className="list-group-item form-control"
         onMouseMove={() => this.setDisplayMenu(true)}
         onMouseLeave={() => this.setDisplayMenu(false)}>
         <div className="text-truncate" onClick={() => this.props.handleItemCompletion(this.props.item)}>
-          <CheckoutStyle className='d-inline-block'>
+          <CheckoutStyle className="d-inline-block">
             <Checkout isCompleted={this.props.item.completed} />
           </CheckoutStyle>
           <span>{this.props.item.value}</span>

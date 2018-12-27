@@ -18,7 +18,6 @@ const TodosListItem = styled.div`
   animation-fill-mode: forwards;
 `;
 
-
 class Content extends Component {
   static propTypes = {
     items: PropTypes.array.isRequired,

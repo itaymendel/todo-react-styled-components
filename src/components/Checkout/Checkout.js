@@ -7,13 +7,7 @@ const checkoutPropTypes = {
 };
 
 const Checkout = props => (
-  <span>
-    {props.isCompleted ? (
-      <FaCheckSquare size="30" />
-    ) : (
-      <FaSquare size="30" />
-    )}
-  </span>
+  <span>{props.isCompleted ? <FaCheckSquare size="30" /> : <FaSquare size="30" />}</span>
 );
 
 Checkout.propTypes = checkoutPropTypes;

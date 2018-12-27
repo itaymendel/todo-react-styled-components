@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {FaEdit, FaTrash} from 'react-icons/fa'
+import { FaEdit, FaTrash } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const Component = styled.div`
@@ -33,14 +33,10 @@ const propertyBarPropTypes = {
 
 const PropertyBar = props => (
   <Component>
-    <Button
-      className='btn btn-secondary'
-      onClick={() => props.handleSelectEditItem(props.id)}>
+    <Button className="btn btn-secondary" onClick={() => props.handleSelectEditItem(props.id)}>
       <FaEdit size="20" />
     </Button>
-    <Button
-      className='btn btn-danger'
-      onClick={() => props.handleDeleteItem(props.id)}>
+    <Button className="btn btn-danger" onClick={() => props.handleDeleteItem(props.id)}>
       <FaTrash size="20" />
     </Button>
   </Component>

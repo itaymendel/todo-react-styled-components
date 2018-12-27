@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {FaCheck, FaTimes} from 'react-icons/fa';
+import { FaCheck, FaTimes } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const FirstButton = styled.button`

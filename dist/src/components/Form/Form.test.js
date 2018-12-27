@@ -1,5 +1,3 @@
-'use strict';
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -10,19 +8,21 @@ var _Form = require('./Form');
 
 var _Form2 = _interopRequireDefault(_Form);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
-describe('FormEdit', function () {
+describe('FormEdit', function() {
   var props = void 0;
 
-  beforeEach(function () {
+  beforeEach(function() {
     props = {
       item: '',
-      handleAddItem: jest.fn()
+      handleAddItem: jest.fn(),
     };
   });
 
-  it('should handle form submission', function () {
+  it('should handle form submission', function() {
     var component = (0, _enzyme.shallow)(_react2.default.createElement(_Form2.default, props));
 
     component.find('form').simulate('submit', { preventDefault: jest.fn() });
@@ -30,7 +30,7 @@ describe('FormEdit', function () {
     expect(props.handleAddItem).toHaveBeenCalledWith(props.item);
   });
 
-  it('should handle form submission with a new input field value', function () {
+  it('should handle form submission with a new input field value', function() {
     var value = 'someNewValue';
 
     var component = (0, _enzyme.shallow)(_react2.default.createElement(_Form2.default, props));

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {FaListAlt} from 'react-icons/fa';
+import { FaListAlt } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -26,7 +26,7 @@ const Header = ({ className }) => (
   <div className={className}>
     <Container>
       <nav className="navbar">
-        <SpanElement className='navbar-brand'>
+        <SpanElement className="navbar-brand">
           <FaListAlt className="d-inline-block" size="40" alt="List emoji" />
         </SpanElement>
         <SpanElement>Bit Todo App</SpanElement>
