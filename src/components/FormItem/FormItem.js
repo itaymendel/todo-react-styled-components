@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-
-import styles from './FormItem.module.css';
+import styled from 'styled-components';
 
 import PropertyBar from '../PropertyBar/PropertyBar';
 import Checkout from '../Checkout/Checkout';
+
+const FormItemStyle = styled.li`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+`;
+
+const CheckoutStyle = styled.div`
+  margin-right: 0.5em;
+  height: 100%;
+`;
 
 export default class FormItem extends Component {
   static propTypes = {
@@ -29,15 +40,15 @@ export default class FormItem extends Component {
 
   render() {
     return (
-      <li
-        className={classnames(styles.component, 'list-group-item form-control')}
+      <FormItemStyle
+        className='list-group-item form-control'
         onMouseMove={() => this.setDisplayMenu(true)}
         onMouseLeave={() => this.setDisplayMenu(false)}>
         <div className="text-truncate" onClick={() => this.props.handleItemCompletion(this.props.item)}>
-          <div className={classnames(styles.checkout, 'd-inline-block')}>
+          <CheckoutStyle className='d-inline-block'>
             <Checkout isCompleted={this.props.item.completed} />
-          </div>
-          <span className={styles.text}>{this.props.item.value}</span>
+          </CheckoutStyle>
+          <span>{this.props.item.value}</span>
         </div>
 
         {this.state.displayMenu ? (
@@ -47,7 +58,7 @@ export default class FormItem extends Component {
             handleDeleteItem={this.props.handleDeleteItem}
           />
         ) : null}
-      </li>
+      </FormItemStyle>
     );
   }
 }

@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
-import classnames from 'classnames';
+import {FaCheck, FaTimes} from 'react-icons/fa';
+import styled from 'styled-components';
 
-import styles from './FormEdit.module.css';
+const FirstButton = styled.button`
+  margin-right: 0.5em;
+`;
+
+const FormEditComponent = styled.li`
+  width: 100%;
+  margin-bottom: 0.5em;
+`;
 
 export default class FormEdit extends Component {
   static propTypes = {
@@ -52,7 +58,7 @@ export default class FormEdit extends Component {
 
   render() {
     return (
-      <li className="form_edit__component list-group-item">
+      <FormEditComponent className="list-group-item">
         <form method="POST" onSubmit={this.handleEditAndResetForm}>
           <div className="form-row">
             <div className="col">
@@ -68,24 +74,24 @@ export default class FormEdit extends Component {
             </div>
 
             <div className="col-auto">
-              <button
+              <FirstButton
                 type="submit"
                 id="submit-edit-todo-item"
-                className={classnames(styles.buttonFirst, 'btn btn-primary')}
+                className="btn btn-primary"
                 disabled={!this.state.itemValue}>
-                <FontAwesomeIcon icon={faCheck} />
-              </button>
+                <FaCheck />
+              </FirstButton>
               <button
                 id="cancel-edit-todo-item"
                 type="button"
                 className="btn btn-danger"
                 onClick={this.props.handleCancelEditItem}>
-                <FontAwesomeIcon icon={faTimes} />
+                <FaTimes />
               </button>
             </div>
           </div>
         </form>
-      </li>
+      </FormEditComponent>
     );
   }
 }

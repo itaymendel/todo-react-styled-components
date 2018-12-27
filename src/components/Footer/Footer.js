@@ -1,7 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import styles from './Footer.module.css';
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: var(--background-color);
+`;
 
 const footerPropTypes = {
   className: PropTypes.string.isRequired,
@@ -9,7 +17,7 @@ const footerPropTypes = {
 
 const Footer = ({ className }) => (
   <div className={className}>
-    <div className={styles.container} />
+    <Container />
   </div>
 );
 

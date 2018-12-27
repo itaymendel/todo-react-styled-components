@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import styled from 'styled-components';
 
 import Form from '../Form/Form';
 import FormEdit from '../FormEdit/FormEdit';
 import FormItem from '../FormItem/FormItem';
 
-import styles from './Content.module.css';
+const Todos = styled.div`
+  margin: 1em 0 1em 0;
+`;
+
+const TodosListItem = styled.div`
+  opacity: 1;
+  margin-bottom: 0.5em;
+  animation: fadeIn 0.3s 1;
+  animation-fill-mode: forwards;
+`;
+
 
 class Content extends Component {
   static propTypes = {
@@ -60,7 +71,7 @@ class Content extends Component {
           {this.props.items.length ? (
             <div className="row justify-content-center">
               <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div className={styles.todos}>
+                <Todos>
                   <ul className="list-group content__todos__ul">
                     <DragDropContext onDragEnd={this.onDragEnd}>
                       <Droppable droppableId="droppable">
@@ -69,11 +80,10 @@ class Content extends Component {
                             {this.props.items.map((item, index) => (
                               <Draggable key={index} draggableId={item.id} index={index}>
                                 {provided => (
-                                  <div
+                                  <TodosListItem
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
-                                    {...provided.dragHandleProps}
-                                    className={styles.todos__li}>
+                                    {...provided.dragHandleProps}>
                                     {this.props.editingItem.id === item.id ? (
                                       <FormEdit
                                         item={this.props.editingItem}
@@ -88,7 +98,7 @@ class Content extends Component {
                                         handleItemCompletion={this.props.handleItemCompletion}
                                       />
                                     )}
-                                  </div>
+                                  </TodosListItem>
                                 )}
                               </Draggable>
                             ))}
@@ -97,7 +107,7 @@ class Content extends Component {
                       </Droppable>
                     </DragDropContext>
                   </ul>
-                </div>
+                </Todos>
               </div>
             </div>
           ) : null}

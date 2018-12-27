@@ -1,10 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faListAlt } from '@fortawesome/free-solid-svg-icons';
-import classnames from 'classnames';
+import {FaListAlt} from 'react-icons/fa';
+import styled from 'styled-components';
 
-import styles from './Header.module.css';
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: var(--background-color);
+`;
+
+const SpanElement = styled.span`
+  margin: 0 0.2em;
+  vertical-align: super;
+  font-size: 1.3em;
+`;
 
 const headerPropTypes = {
   className: PropTypes.string.isRequired,
@@ -12,14 +24,14 @@ const headerPropTypes = {
 
 const Header = ({ className }) => (
   <div className={className}>
-    <div className={styles.container}>
+    <Container>
       <nav className="navbar">
-        <span className={classnames(styles.span, 'navbar-brand')}>
-          <FontAwesomeIcon className="d-inline-block" icon={faListAlt} size="lg" alt="List emoji" />
-        </span>
-        <span className={styles.span}>Bit Todo App</span>
+        <SpanElement className='navbar-brand'>
+          <FaListAlt className="d-inline-block" size="40" alt="List emoji" />
+        </SpanElement>
+        <SpanElement>Bit Todo App</SpanElement>
       </nav>
-    </div>
+    </Container>
   </div>
 );
 

@@ -1,10 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import classnames from 'classnames';
+import {FaEdit, FaTrash} from 'react-icons/fa'
+import styled from 'styled-components';
 
-import styles from './PropertyBar.module.css';
+const Component = styled.div`
+  position: absolute;
+  right: 1em;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+`;
+
+const Button = styled.button`
+  margin-right: 0.5em;
+  opacity: 0.1;
+  transition: opacity 0.25s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+  }
+`;
 
 const propertyBarPropTypes = {
   id: PropTypes.string.isRequired,
@@ -13,18 +32,18 @@ const propertyBarPropTypes = {
 };
 
 const PropertyBar = props => (
-  <div className={styles.component}>
-    <button
-      className={classnames(styles.button, 'btn btn-secondary')}
+  <Component>
+    <Button
+      className='btn btn-secondary'
       onClick={() => props.handleSelectEditItem(props.id)}>
-      <FontAwesomeIcon icon={faEdit} size="sm" />
-    </button>
-    <button
-      className={classnames(styles.button, 'btn btn-danger')}
+      <FaEdit size="20" />
+    </Button>
+    <Button
+      className='btn btn-danger'
       onClick={() => props.handleDeleteItem(props.id)}>
-      <FontAwesomeIcon icon={faTrash} size="sm" />
-    </button>
-  </div>
+      <FaTrash size="20" />
+    </Button>
+  </Component>
 );
 
 PropertyBar.propTypes = propertyBarPropTypes;

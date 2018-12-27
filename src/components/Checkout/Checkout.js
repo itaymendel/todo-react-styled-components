@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+import { FaSquare, FaCheckSquare } from 'react-icons/fa';
 
 const checkoutPropTypes = {
   isCompleted: PropTypes.bool.isRequired,
@@ -10,9 +9,9 @@ const checkoutPropTypes = {
 const Checkout = props => (
   <span>
     {props.isCompleted ? (
-      <FontAwesomeIcon icon={faCheckSquare} size="2x" />
+      <FaCheckSquare size="30" />
     ) : (
-      <FontAwesomeIcon icon={faSquare} size="2x" />
+      <FaSquare size="30" />
     )}
   </span>
 );

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FaPlus } from 'react-icons/fa';
 
 export default class Form extends Component {
   static propTypes = {
@@ -52,7 +50,7 @@ export default class Form extends Component {
                 className="btn btn-primary"
                 disabled={!this.state.itemValue}
                 aria-label="Add todo item">
-                <FontAwesomeIcon icon={faPlus} />
+                <FaPlus />
               </button>
             </div>
           </div>
